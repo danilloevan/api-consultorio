@@ -13,7 +13,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import mad.voll.api.domain.usuario.UsuarioRepository;
+import mad.voll.api.modules.basicRegister.usuario.UsuarioRepository;
 
 @Component
 public class SecurityFilter extends OncePerRequestFilter {
