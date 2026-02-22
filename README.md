@@ -13,5 +13,3 @@ Stack do projeto:
   - Persistencia com JPA e Hibernate;
   - Banco de dados Postgres;
   - Autorization JWT;
-
-PS: O texto pode até está ruim, mas foi escrito por mim.
