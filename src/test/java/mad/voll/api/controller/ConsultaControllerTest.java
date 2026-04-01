@@ -21,10 +21,10 @@ import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
-import mad.voll.api.domain.consulta.AgendaDeConsultas;
-import mad.voll.api.domain.consulta.DadosAgendamentoConsulta;
-import mad.voll.api.domain.consulta.DadosDetalhamentoConsulta;
-import mad.voll.api.domain.medico.Especialidade;
+import mad.voll.api.modules.consulta.AgendaDeConsultas;
+import mad.voll.api.modules.consulta.DadosAgendamentoConsulta;
+import mad.voll.api.modules.consulta.DadosDetalhamentoConsulta;
+import mad.voll.api.modules.basicRegister.medico.MedicoEspecialidadeEnum;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -65,7 +65,7 @@ class ConsultaControllerTest {
 		MockHttpServletResponse mockResponse =  mock.perform(
 				post("/consultas").contentType(MediaType.APPLICATION_JSON)
 					.content(dadosAgendamentoJson.write(
-							new DadosAgendamentoConsulta(2L, 10L, dataHora, Especialidade.CARDIOLOGIA)).getJson())
+							new DadosAgendamentoConsulta(2L, 10L, dataHora, MedicoEspecialidadeEnum.CARDIOLOGIA)).getJson())
 				).andReturn().getResponse();
 	
 		assertThat(mockResponse.getStatus()).isEqualTo(HttpStatus.OK.value());
